@@ -8,13 +8,32 @@ At the moment it's more a proof of concept than a client, there is no interface.
 
 ### How to use it
 
+Clone the directory :
+
 ````bash
 git clone git@github.com:jameslafa/totpex.git
 cd totpex
+````
+
+**In debug mode:**
+
+````bash
 iex -S mix
 
 iex(1)> Totpex.generate_totp("mysecretkey_base32encoded")
 "798396"
+````
+
+**As a standalone application**
+
+````bash
+# build binary (one time operation)
+mix escript.build
+
+# Execute application
+./totpex
+Please enter your secret key: 634hszwpdilkzqe2
+Your One-Time Password is 382765
 ````
 
 ### Requirements

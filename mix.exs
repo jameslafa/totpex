@@ -5,6 +5,7 @@ defmodule Totpex.Mixfile do
     [app: :totpex,
      version: "0.1.0",
      elixir: "~> 1.4",
+     escript: escript_config(),
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
      deps: deps()]
@@ -16,6 +17,10 @@ defmodule Totpex.Mixfile do
   def application do
     # Specify extra applications you'll use from Erlang/Elixir
     [extra_applications: [:logger]]
+  end
+
+  defp escript_config do
+    [main_module: Totpex.CLI]
   end
 
   # Dependencies can be Hex packages:
