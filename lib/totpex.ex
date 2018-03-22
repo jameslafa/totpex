@@ -41,6 +41,7 @@ defmodule Totpex do
     truncated_hmac
     |> rem(1000000)
     |> Integer.to_string
+    |> String.pad_leading(6, "0")
   end
 
   @doc """
